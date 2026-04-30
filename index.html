@@ -1062,4 +1062,39 @@
     data:{
       labels:['Leads','Reuniões','Propostas','Ganhos'],
       datasets:[
-        {label:'2025 (Q1)',d
+        {label:'2025 (Q1)',data:[162,69,20,2],backgroundColor:COLORS.roxoSoft,borderRadius:6},
+        {label:'2026 (Q1)',data:[92,20,9,1],backgroundColor:COLORS.roxo,borderRadius:6}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      scales:{
+        x:{grid:{display:false}},
+        y:{grid:{color:'#F4F2F8'},beginAtZero:true}
+      },
+      plugins:{legend:{position:'bottom'}}
+    }
+  });
+
+  // Events monthly
+  new Chart(document.getElementById('eventsTimelineChart'),{
+    type:'bar',
+    data:{
+      labels:['Janeiro','Fevereiro','Março'],
+      datasets:[
+        {label:'Reuniões via Pit Stop',data:[1,3,14],backgroundColor:[COLORS.roxoSoft,COLORS.roxoLight,COLORS.roxo],borderRadius:8,categoryPercentage:0.6}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      scales:{
+        x:{grid:{display:false}},
+        y:{grid:{color:'#F4F2F8'},beginAtZero:true,ticks:{stepSize:2}}
+      },
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{afterLabel:function(c){if(c.label==='Janeiro')return 'reativação inicial da base';if(c.label==='Fevereiro')return 'cadência comercial pré-evento';return 'evento + cobertura';}}}
+      }
+    }
+  });
+</script>
