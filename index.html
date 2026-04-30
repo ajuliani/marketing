@@ -387,9 +387,9 @@
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-label">Leads / Oportunidades</div>
-        <div class="kpi-value">317</div>
+        <div class="kpi-value">329</div>
         <div class="kpi-sub">
-          <span class="kpi-pill">25,6% vs. 2025</span>
+          <span class="kpi-pill">26,6% vs. 2025</span>
           <span>1.238 em 2025</span>
         </div>
       </div>
@@ -430,18 +430,18 @@
           <div class="goal-subtitle">Origens consideradas: tráfego pago, orgânico e e-mail marketing (eventos não entram na meta)</div>
         </div>
         <div class="goal-stat">
-          <div class="goal-stat-value"><span>80</span> / 212</div>
-          <div class="goal-stat-label">37,7% atingido em Q1</div>
+          <div class="goal-stat-value"><span>92</span> / 212</div>
+          <div class="goal-stat-label">43,4% atingido em Q1</div>
         </div>
       </div>
       <div class="progress-track">
-        <div class="progress-fill" id="progressFill" style="width:37.7%">37,7%</div>
+        <div class="progress-fill" id="progressFill" style="width:43.4%">43,4%</div>
       </div>
       <div class="progress-segments">
         <div class="progress-segment organic">
           <div class="progress-segment-label">Tráfego Pago (Google Ads)</div>
-          <div class="progress-segment-value">53</div>
-          <div class="progress-segment-extra">25,0% da meta · CPL médio R$ 211 · Maior volume YTD</div>
+          <div class="progress-segment-value">65</div>
+          <div class="progress-segment-extra">30,7% da meta · CPL R$ 211 (Mar) · Maior volume YTD</div>
         </div>
         <div class="progress-segment">
           <div class="progress-segment-label">Orgânico (SEO + redes)</div>
@@ -461,11 +461,16 @@
   <div class="section">
     <div class="section-title">Evolução mês a mês</div>
 
-    <div class="full-col">
+    <div class="two-col">
       <div class="chart-card">
-        <div class="chart-card-title">Funil completo por mês · 2026</div>
-        <div class="chart-card-subtitle">Leads, reuniões, propostas e ganhos das origens da meta (pago + orgânico + e-mail) — não inclui eventos</div>
-        <div class="chart-wrap tall"><canvas id="monthlyFunnelChart"></canvas></div>
+        <div class="chart-card-title">Leads por origem · mês a mês</div>
+        <div class="chart-card-subtitle">Empilhado por canal · origens da meta (pago + orgânico + e-mail) — não inclui eventos</div>
+        <div class="chart-wrap tall"><canvas id="leadsByOriginChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Conversões mês a mês</div>
+        <div class="chart-card-subtitle">Reuniões, propostas e ganhos consolidados — origens da meta</div>
+        <div class="chart-wrap tall"><canvas id="conversionsChart"></canvas></div>
       </div>
     </div>
 
@@ -489,9 +494,9 @@
         <div class="chart-wrap"><canvas id="followersChart"></canvas></div>
       </div>
       <div class="chart-card">
-        <div class="chart-card-title">Distribuição de leads por origem · YTD</div>
-        <div class="chart-card-subtitle">Eventos lideram volume; origens da meta (pago + orgânico + e-mail) representam 25%</div>
-        <div class="chart-wrap"><canvas id="channelChart"></canvas></div>
+        <div class="chart-card-title">Métricas por origem · YTD</div>
+        <div class="chart-card-subtitle">Leads, reuniões, propostas e ganhos por canal — Orgânico domina o fundo de funil</div>
+        <div class="chart-wrap"><canvas id="metricsByOriginChart"></canvas></div>
       </div>
     </div>
   </div>
@@ -506,13 +511,13 @@
         <div class="funnel" style="margin-top:12px">
           <div class="funnel-row">
             <div class="funnel-label">Leads</div>
-            <div class="funnel-bar b1" style="width:100%">317</div>
+            <div class="funnel-bar b1" style="width:100%">329</div>
             <div class="funnel-conv">100%</div>
           </div>
           <div class="funnel-row">
             <div class="funnel-label">Reuniões</div>
             <div class="funnel-bar b2" style="width:60%">37</div>
-            <div class="funnel-conv">11,7%</div>
+            <div class="funnel-conv">11,2%</div>
           </div>
           <div class="funnel-row">
             <div class="funnel-label">Propostas</div>
@@ -527,7 +532,7 @@
         </div>
         <div class="insight" style="margin-top:18px">
           <div class="insight-title">Como ler o funil</div>
-          <div class="insight-text">A cada 100 leads, ~12 viram reunião e ~3 viram proposta. Conversão proposta → ganho ainda é baixa em Q1 (1 ganho), reflexo do ciclo longo do B2B logístico. O ChargeOn fechado em março materializa o ecossistema Vendemmia (cliente Raízen aproveitou armazenagem + transporte).</div>
+          <div class="insight-text">A cada 100 leads, ~11 viram reunião e ~3 viram proposta. Conversão proposta → ganho ainda é baixa em Q1 (1 ganho), reflexo do ciclo longo do B2B logístico. O ChargeOn fechado em março materializa o ecossistema Vendemmia (cliente Raízen aproveitou armazenagem + transporte).</div>
         </div>
       </div>
       <div class="chart-card">
@@ -536,7 +541,7 @@
         <div class="chart-wrap"><canvas id="comparisonChart"></canvas></div>
         <div class="insight" style="margin-top:14px">
           <div class="insight-title">Pace mais lento, qualidade maior</div>
-          <div class="insight-text">2026 traz menos volume das origens da meta vs. mesmo período de 2025 (80 vs. 162 leads), mas com taxa de propostas equivalente (11% vs. 12%). O foco do Q2 é recuperar volume sem perder qualificação.</div>
+          <div class="insight-text">2026 traz menos volume das origens da meta vs. mesmo período de 2025 (92 vs. 162 leads), mas com taxa de propostas saudável (10% vs. 12%). O foco do Q2 é recuperar volume sem perder qualificação.</div>
         </div>
       </div>
     </div>
@@ -557,7 +562,7 @@
           <div class="events-stat">
             <div class="events-stat-label">Leads gerados (YTD)</div>
             <div class="events-stat-value">237</div>
-            <div class="events-stat-extra">75% das oportunidades do ano</div>
+            <div class="events-stat-extra">72% das oportunidades do ano</div>
           </div>
           <div class="events-stat">
             <div class="events-stat-label">Reuniões (YTD)</div>
@@ -694,9 +699,9 @@
     <div class="tab-content active" id="tab-google">
       <div class="chart-card">
         <div class="chart-card-title">Google Ads — Março 2026</div>
-        <div class="chart-card-subtitle">CTR acima do benchmark · CPL no limite inferior · investimento R$ 3.283 (-22% vs. fev)</div>
+        <div class="chart-card-subtitle">CTR acima do benchmark · CPL no limite inferior · investimento R$ 3.283 (-22% vs. fev) · evolução mensal de leads pagos: Jan 27 · Fev 19 · Mar 19</div>
         <div class="channel-grid">
-          <div class="channel-stat"><div class="channel-stat-label">Novos leads</div><div class="channel-stat-value">20</div><div class="channel-stat-delta neutral">conversões totais</div></div>
+          <div class="channel-stat"><div class="channel-stat-label">Novos leads (Mar)</div><div class="channel-stat-value">19</div><div class="channel-stat-delta neutral">65 leads YTD</div></div>
           <div class="channel-stat"><div class="channel-stat-label">CPL</div><div class="channel-stat-value">R$ 211</div><div class="channel-stat-delta up">↓ 19,8% vs. fev</div></div>
           <div class="channel-stat"><div class="channel-stat-label">CTR</div><div class="channel-stat-value">7,21%</div><div class="channel-stat-delta up">benchmark: 4–6%</div></div>
           <div class="channel-stat"><div class="channel-stat-label">CPM</div><div class="channel-stat-value">R$ 343</div><div class="channel-stat-delta up">↓ 18,0% vs. fev</div></div>
@@ -915,13 +920,36 @@
   Chart.defaults.plugins.legend.labels.boxWidth=8;
   Chart.defaults.plugins.legend.labels.padding=14;
 
-  // Monthly funnel chart - real data from PDF report
-  new Chart(document.getElementById('monthlyFunnelChart'),{
+  // Leads by origin per month - stacked
+  new Chart(document.getElementById('leadsByOriginChart'),{
     type:'bar',
     data:{
       labels:['Janeiro','Fevereiro','Março'],
       datasets:[
-        {label:'Leads',data:[34,21,25],backgroundColor:COLORS.roxo,borderRadius:6,categoryPercentage:0.7,barPercentage:0.85},
+        {label:'Tráfego Pago',data:[27,19,19],backgroundColor:COLORS.roxo,borderRadius:6,stack:'s'},
+        {label:'Orgânico',data:[10,4,10],backgroundColor:COLORS.verde,borderRadius:6,stack:'s'},
+        {label:'E-mail',data:[0,1,2],backgroundColor:COLORS.vermelho,borderRadius:6,stack:'s'}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      scales:{
+        x:{stacked:true,grid:{display:false}},
+        y:{stacked:true,grid:{color:'#F4F2F8'},beginAtZero:true,ticks:{stepSize:5}}
+      },
+      plugins:{
+        legend:{position:'bottom'},
+        tooltip:{callbacks:{footer:function(items){let t=0;items.forEach(i=>t+=i.parsed.y);return 'Total: '+t+' leads'}}}
+      }
+    }
+  });
+
+  // Conversions per month - grouped bars
+  new Chart(document.getElementById('conversionsChart'),{
+    type:'bar',
+    data:{
+      labels:['Janeiro','Fevereiro','Março'],
+      datasets:[
         {label:'Reuniões',data:[6,4,10],backgroundColor:COLORS.roxoLight,borderRadius:6,categoryPercentage:0.7,barPercentage:0.85},
         {label:'Propostas',data:[4,1,4],backgroundColor:COLORS.vermelho,borderRadius:6,categoryPercentage:0.7,barPercentage:0.85},
         {label:'Ganhos',data:[0,0,1],backgroundColor:COLORS.verde,borderRadius:6,categoryPercentage:0.7,barPercentage:0.85}
@@ -931,15 +959,15 @@
       responsive:true,maintainAspectRatio:false,
       scales:{
         x:{grid:{display:false}},
-        y:{grid:{color:'#F4F2F8'},ticks:{stepSize:5}}
+        y:{grid:{color:'#F4F2F8'},ticks:{stepSize:2},beginAtZero:true}
       },
       plugins:{legend:{position:'bottom'}}
     }
   });
 
   // Cumulative leads vs goal
-  const monthlyTotal=[34,21,25];
-  const cumulative=[34,55,80];
+  const monthlyTotal=[37,24,31];
+  const cumulative=[37,61,92];
   const target=212;
   const idealPace=[target/12,target*2/12,target*3/12].map(v=>Math.round(v));
   new Chart(document.getElementById('cumulativeChart'),{
@@ -947,7 +975,7 @@
     data:{
       labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
       datasets:[
-        {label:'Acumulado real',data:[34,55,80,null,null,null,null,null,null,null,null,null],borderColor:COLORS.roxo,backgroundColor:'rgba(66,44,117,0.10)',borderWidth:3,fill:true,tension:0.25,pointBackgroundColor:COLORS.roxo,pointRadius:5,pointHoverRadius:7,spanGaps:false},
+        {label:'Acumulado real',data:[37,61,92,null,null,null,null,null,null,null,null,null],borderColor:COLORS.roxo,backgroundColor:'rgba(66,44,117,0.10)',borderWidth:3,fill:true,tension:0.25,pointBackgroundColor:COLORS.roxo,pointRadius:5,pointHoverRadius:7,spanGaps:false},
         {label:'Pace para 212 leads',data:[18,35,53,71,88,106,124,141,159,177,194,212],borderColor:COLORS.vermelho,borderDash:[5,5],borderWidth:2,fill:false,tension:0.1,pointBackgroundColor:COLORS.vermelho,pointRadius:3}
       ]
     },
@@ -1006,36 +1034,16 @@
     }
   });
 
-  // Channel distribution donut
-  new Chart(document.getElementById('channelChart'),{
-    type:'doughnut',
-    data:{
-      labels:['Pit Stop / Eventos · 237','Tráfego Pago · 53','Orgânico · 24','E-mail Mkt · 3'],
-      datasets:[{
-        data:[237,53,24,3],
-        backgroundColor:[COLORS.roxo,COLORS.vermelho,COLORS.verde,COLORS.roxoLight],
-        borderWidth:3,
-        borderColor:'#FFFFFF'
-      }]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      cutout:'60%',
-      plugins:{
-        legend:{position:'right',align:'center',labels:{padding:12}},
-        tooltip:{callbacks:{label:function(c){const t=c.dataset.data.reduce((a,b)=>a+b,0);return c.label+' · '+((c.parsed/t)*100).toFixed(1)+'%';}}}
-      }
-    }
-  });
-
-  // 2025 vs 2026 comparison
-  new Chart(document.getElementById('comparisonChart'),{
+  // Metrics by origin (mirrors the "Por origens" chart from the source report)
+  new Chart(document.getElementById('metricsByOriginChart'),{
     type:'bar',
     data:{
-      labels:['Leads','Reuniões','Propostas','Ganhos'],
+      labels:['Orgânico','Tráfego Pago','E-mail Mkt','Pit Stop / Eventos'],
       datasets:[
-        {label:'2025 (Q1)',data:[162,69,20,2],backgroundColor:COLORS.roxoSoft,borderRadius:6},
-        {label:'2026 (Q1)',data:[80,20,9,1],backgroundColor:COLORS.roxo,borderRadius:6}
+        {label:'Leads',data:[24,65,3,237],backgroundColor:COLORS.roxo,borderRadius:5},
+        {label:'Reuniões',data:[12,6,2,17],backgroundColor:COLORS.roxoLight,borderRadius:5},
+        {label:'Propostas',data:[5,4,0,0],backgroundColor:COLORS.vermelho,borderRadius:5},
+        {label:'Ganhos',data:[1,0,0,0],backgroundColor:COLORS.verde,borderRadius:5}
       ]
     },
     options:{
@@ -1048,27 +1056,10 @@
     }
   });
 
-  // Events monthly
-  new Chart(document.getElementById('eventsTimelineChart'),{
+  // 2025 vs 2026 comparison
+  new Chart(document.getElementById('comparisonChart'),{
     type:'bar',
     data:{
-      labels:['Janeiro','Fevereiro','Março'],
+      labels:['Leads','Reuniões','Propostas','Ganhos'],
       datasets:[
-        {label:'Reuniões via Pit Stop',data:[1,3,14],backgroundColor:[COLORS.roxoSoft,COLORS.roxoLight,COLORS.roxo],borderRadius:8,categoryPercentage:0.6}
-      ]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      scales:{
-        x:{grid:{display:false}},
-        y:{grid:{color:'#F4F2F8'},beginAtZero:true,ticks:{stepSize:2}}
-      },
-      plugins:{
-        legend:{display:false},
-        tooltip:{callbacks:{afterLabel:function(c){if(c.label==='Janeiro')return 'reativação inicial da base';if(c.label==='Fevereiro')return 'cadência comercial pré-evento';return 'evento + cobertura';}}}
-      }
-    }
-  });
-</script>
-</body>
-</html>
+        {label:'2025 (Q1)',d
