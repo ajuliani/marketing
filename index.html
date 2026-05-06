@@ -151,6 +151,23 @@
   .events-stat-value{font-size:28px;font-weight:700;margin-top:6px;letter-spacing:-0.5px}
   .events-stat-extra{font-size:11px;opacity:0.7;margin-top:2px}
 
+  .patterns-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:8px}
+  .pattern-card{background:var(--white);border-radius:12px;padding:16px 18px;border:1px solid var(--gray-200);border-left:4px solid var(--roxo);position:relative}
+  .pattern-card.green{border-left-color:var(--verde-dark)}
+  .pattern-card.purple{border-left-color:var(--roxo)}
+  .pattern-card.pink{border-left-color:var(--vermelho)}
+  .pattern-card-rank{position:absolute;top:14px;right:14px;background:var(--roxo-soft);color:var(--roxo);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.5px}
+  .pattern-card.green .pattern-card-rank{background:var(--verde-soft);color:var(--verde-dark)}
+  .pattern-card.pink .pattern-card-rank{background:var(--vermelho-soft);color:var(--vermelho)}
+  .pattern-card-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.35;padding-right:32px}
+  .pattern-card-text{font-size:12px;color:var(--gray-700);line-height:1.55}
+  .pattern-card-text strong{color:var(--roxo);font-weight:600}
+  .heatmap-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:11px;color:var(--gray-700);font-weight:600}
+  .heatmap-legend span{display:inline-flex;align-items:center;gap:6px}
+  .heatmap-legend span::before{content:'';width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .heatmap-legend .lg-green::before{background:var(--verde)}
+  .heatmap-legend .lg-purple::before{background:var(--roxo)}
+  .heatmap-legend .lg-pink::before{background:var(--vermelho)}
   .companies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
   .company-chip{padding:10px 14px;background:var(--roxo-softer);border:1px solid var(--roxo-soft);border-radius:8px;font-size:12px;font-weight:600;color:var(--roxo);text-align:left;display:flex;align-items:center;gap:8px}
   .company-chip::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--roxo);flex-shrink:0}
@@ -646,6 +663,63 @@
           <div class="insight-text">72,8% de São Paulo · transporte/armazenagem (18,9%), import/export (12,6%), serviços financeiros (5,5%) · 68% mobile, 32% desktop. Sêniores cresceram para 39% e iniciantes a 46,5% — o conteúdo precisa equilibrar profundidade técnica com acessibilidade para não perder essa parcela em formação.</div>
         </div>
       </div>
+
+      <div class="chart-card" style="margin-top:18px">
+        <div class="chart-card-title">Mapa de calor · 22 posts de abril</div>
+        <div class="chart-card-subtitle">Cada bolinha é um post · tamanho proporcional a reações · cor pelo tipo de conteúdo · linha tracejada marca o benchmark de 5%</div>
+        <div class="heatmap-legend">
+          <span class="lg-green">Vídeo com pessoa real (Talks · cobertura · depoimentos)</span>
+          <span class="lg-purple">Vídeo institucional / cinematográfico (elos · Torre de Controle)</span>
+          <span class="lg-pink">Texto / peça estática</span>
+        </div>
+        <div class="chart-wrap tall" style="margin-top:14px"><canvas id="postsHeatmap"></canvas></div>
+        <div class="insight green" style="margin-top:14px">
+          <div class="insight-title">Leitura do mapa em uma frase</div>
+          <div class="insight-text">12 dos 22 posts são vídeos com pessoa real e concentram a região superior do gráfico — média de <strong>8,9% de engajamento</strong>. Vídeos institucionais cinematográficos (sem rosto humano) ficam na faixa do meio (média 6,2%). Posts texto/peça estática são bimodais: quando carregam narrativa humana (boas-vindas ao Diretor) sobem para topo; quando são só institucional/peça gráfica, ficam abaixo do benchmark.</div>
+        </div>
+      </div>
+
+      <div class="chart-card" style="margin-top:18px">
+        <div class="chart-card-title">Padrões de conteúdo identificados · abril</div>
+        <div class="chart-card-subtitle">7 leituras tiradas do cruzamento entre métricas e análise visual dos posts</div>
+        <div class="patterns-grid">
+          <div class="pattern-card green">
+            <div class="pattern-card-rank">#1</div>
+            <div class="pattern-card-title">Pessoa real em vídeo bate qualquer coisa</div>
+            <div class="pattern-card-text">Os 3 picos do mês (>10% de engajamento) e os 5 seguintes (>9%) são todos vídeos com pessoas em foco. <strong>12 posts de pessoa real entregaram média de 8,9%</strong>.</div>
+          </div>
+          <div class="pattern-card green">
+            <div class="pattern-card-rank">#2</div>
+            <div class="pattern-card-title">Cobertura ao vivo de evento é o pico absoluto</div>
+            <div class="pattern-card-text">Vídeo combinando pessoa real + ambiente do evento + autenticidade do momento (15/04 e 16/04) <strong>passa de 10,9% de engajamento</strong>.</div>
+          </div>
+          <div class="pattern-card pink">
+            <div class="pattern-card-rank">#3</div>
+            <div class="pattern-card-title">Boas-vindas humano-corporativo carrega sozinha</div>
+            <div class="pattern-card-text">Post 100% texto sobre o novo Diretor (17/04) bateu <strong>11,19% sem nenhuma imagem ou vídeo</strong>. Conteúdo humano-corporativo sustenta o pico do mês.</div>
+          </div>
+          <div class="pattern-card green">
+            <div class="pattern-card-rank">#4</div>
+            <div class="pattern-card-title">Vendemmia Talks virou formato campeão</div>
+            <div class="pattern-card-text">5 posts seguidos do formato (cenário talk show roxo, depoimento de convidado real) entregaram <strong>entre 6,86% e 9,82%</strong>. Performance previsível e alta.</div>
+          </div>
+          <div class="pattern-card green">
+            <div class="pattern-card-rank">#5</div>
+            <div class="pattern-card-title">Validação externa amplifica engajamento</div>
+            <div class="pattern-card-text">Posts com Carlos Menchik (autoridade do setor) e clientes (Felipe Marin, Ana Paula) <strong>convertem melhor que conteúdo institucional puro</strong>. Terceiro fala melhor que a marca de si mesma.</div>
+          </div>
+          <div class="pattern-card purple">
+            <div class="pattern-card-rank">#6</div>
+            <div class="pattern-card-title">Vídeo cinematográfico sem pessoa fica na média</div>
+            <div class="pattern-card-text">Torre de Controle e os elos do ecossistema com narrativa cinematográfica (avião, contêineres, monitores) ficam na <strong>faixa 6–8%</strong>. Bonito, mas não emocional.</div>
+          </div>
+          <div class="pattern-card pink">
+            <div class="pattern-card-rank">#7</div>
+            <div class="pattern-card-title">Foto/peça estática institucional é o piso</div>
+            <div class="pattern-card-text">Post estático sem rosto humano e sem evento é o mais baixo do mês (<strong>3,86%</strong>). Sem movimento, sem pessoa, sem narrativa, o engajamento despenca.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="tab-content" id="tab-email">
@@ -966,6 +1040,114 @@
       }
     }
   });
+
+  // LinkedIn posts heatmap - bubble chart (22 posts of April)
+  const benchmarkLine={
+    id:'benchmarkLine',
+    afterDatasetsDraw(chart){
+      const{ctx,chartArea:{left,right,top,bottom},scales:{y}}=chart;
+      const yPos=y.getPixelForValue(5);
+      ctx.save();
+      ctx.strokeStyle='rgba(255,47,105,0.5)';
+      ctx.lineWidth=1.5;
+      ctx.setLineDash([5,5]);
+      ctx.beginPath();
+      ctx.moveTo(left,yPos);
+      ctx.lineTo(right,yPos);
+      ctx.stroke();
+      ctx.fillStyle='#FF2F69';
+      ctx.font='600 10px -apple-system,BlinkMacSystemFont,sans-serif';
+      ctx.fillText('Benchmark LinkedIn ~5%',left+8,yPos-6);
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById('postsHeatmap'),{
+    type:'bubble',
+    data:{
+      datasets:[
+        {
+          label:'Vídeo com pessoa real',
+          data:[
+            {x:1146,y:5.93,r:7,label:'01/04 · Início campanha ecossistema'},
+            {x:1234,y:8.02,r:9,label:'02/04 · Post Intermodal'},
+            {x:1605,y:7.54,r:10,label:'11/04 · Vídeo institucional'},
+            {x:2959,y:11.36,r:14,label:'15/04 · Cobertura Intermodal (ao vivo)'},
+            {x:2019,y:8.58,r:11,label:'16/04 · Cobertura Intermodal'},
+            {x:4517,y:10.94,r:18,label:'16/04 · Anúncio Rede Armazéns'},
+            {x:1528,y:8.84,r:11,label:'23/04 · Vendemmia Talks'},
+            {x:525,y:6.86,r:6,label:'24/04 · Talks · Felipe Marin'},
+            {x:816,y:7.84,r:7,label:'25/04 · Talks · Ana Paula'},
+            {x:1596,y:9.21,r:11,label:'28/04 · Talks · Carlos Menchik'},
+            {x:713,y:9.82,r:8,label:'29/04 · Vendemmia Talks'},
+            {x:876,y:9.59,r:9,label:'30/04 · Vendemmia Talks'}
+          ],
+          backgroundColor:'rgba(0,226,144,0.55)',
+          borderColor:COLORS.verdeDark,
+          borderWidth:1.5
+        },
+        {
+          label:'Vídeo institucional / cinematográfico',
+          data:[
+            {x:1564,y:6.01,r:9,label:'02/04 · Elo Importação'},
+            {x:795,y:5.03,r:6,label:'08/04 · Conteúdo armazém'},
+            {x:1486,y:7.74,r:10,label:'09/04 · Vídeo fachada Vendemmia'},
+            {x:648,y:3.86,r:5,label:'10/04 · Conteúdo transporte'},
+            {x:2001,y:7.15,r:11,label:'13/04 · Torre de Controle'},
+            {x:989,y:4.85,r:7,label:'14/04 · Elo ecossistema'},
+            {x:2951,y:5.22,r:11,label:'17/04 · Pós-evento institucional'}
+          ],
+          backgroundColor:'rgba(66,44,117,0.55)',
+          borderColor:COLORS.roxo,
+          borderWidth:1.5
+        },
+        {
+          label:'Texto / peça estática',
+          data:[
+            {x:3250,y:6.92,r:14,label:'06/04 · Stand H110 (peça gráfica)'},
+            {x:3717,y:11.19,r:17,label:'17/04 · Boas-vindas Diretor (texto)'},
+            {x:526,y:4.94,r:5,label:'27/04 · Conteúdo estático'}
+          ],
+          backgroundColor:'rgba(255,47,105,0.55)',
+          borderColor:COLORS.vermelho,
+          borderWidth:1.5
+        }
+      ]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      scales:{
+        x:{
+          title:{display:true,text:'Impressões',color:'#857F95',font:{size:11,weight:'600'}},
+          type:'linear',min:0,suggestedMax:5000,
+          grid:{color:'#F4F2F8'},
+          ticks:{callback:function(v){return v.toLocaleString('pt-BR')}}
+        },
+        y:{
+          title:{display:true,text:'Taxa de engajamento (%)',color:'#857F95',font:{size:11,weight:'600'}},
+          min:0,max:13,
+          grid:{color:'#F4F2F8'},
+          ticks:{callback:function(v){return v+'%'}}
+        }
+      },
+      plugins:{
+        legend:{position:'bottom',labels:{padding:14}},
+        tooltip:{
+          callbacks:{
+            label:function(c){
+              return c.raw.label;
+            },
+            afterLabel:function(c){
+              return c.raw.x.toLocaleString('pt-BR')+' impressões · '+c.raw.y+'% engajamento';
+            }
+          }
+        }
+      }
+    },
+    plugins:[benchmarkLine]
+  });
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
